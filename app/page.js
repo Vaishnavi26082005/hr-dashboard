@@ -12,7 +12,7 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [depFilter, setDepFilter] = useState([]);
   const [ratingFilter, setRatingFilter] = useState([]);
-  const {bookmarks, add} = useBookmarks();
+  const {bookmarks, toggleBookmark} = useBookmarks();
 
   useEffect(() => {
     setLoading(true);
@@ -183,7 +183,7 @@ export default function Dashboard() {
                 user={u}
                 isBookmarked={bookmarks.some(b=>b.id===u.id)}
                 onView={() => window.location.href=`/employee/${u.id}`}
-                onBookmark={() => add(u)}
+                onBookmark={() => toggleBookmark(u)}
                 onPromote={() => alert("Promote!")}
               />
             ))}
