@@ -58,24 +58,24 @@ export default function RootLayout({children}) {
             {/* Mobile Navigation */}
             <div className="md:hidden pb-4">
               <div className="flex flex-col space-y-2">
-                <a 
+                <Link 
                   href="/" 
                   className="block px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors duration-200"
                 >
                   🏠 Dashboard
-                </a>
-                <a 
+                </Link>
+                <Link 
                   href="/bookmarks" 
                   className="block px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors duration-200"
                 >
                   ⭐ Bookmarks
-                </a>
-                <a 
+                </Link>
+                <Link 
                   href="/analytics" 
                   className="block px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors duration-200"
                 >
                   📊 Analytics
-                </a>
+                </Link>
               </div>
             </div>
           </div>
