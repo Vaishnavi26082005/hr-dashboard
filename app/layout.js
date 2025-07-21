@@ -1,4 +1,5 @@
 import './globals.css'
+import Link from 'next/link';
 export const metadata = { title: 'HR Dashboard - Modern Employee Management' }
 export default function RootLayout({children}) {
   return (
@@ -20,27 +21,27 @@ export default function RootLayout({children}) {
               {/* Navigation Links */}
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
-                  <a 
+                  <Link 
                     href="/" 
                     className="group relative px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
                   >
                     <span className="relative z-10">🏠 Dashboard</span>
                     <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-10 transition-opacity duration-200"></span>
-                  </a>
-                  <a 
+                  </Link>
+                  <Link 
                     href="/bookmarks" 
                     className="group relative px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
                   >
                     <span className="relative z-10">⭐ Bookmarks</span>
                     <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-10 transition-opacity duration-200"></span>
-                  </a>
-                  <a 
+                  </Link>
+                  <Link 
                     href="/analytics" 
                     className="group relative px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
                   >
                     <span className="relative z-10">📊 Analytics</span>
                     <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-10 transition-opacity duration-200"></span>
-                  </a>
+                  </Link>
                 </div>
               </div>
 
