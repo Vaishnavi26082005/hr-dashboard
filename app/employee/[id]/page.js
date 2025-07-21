@@ -1,14 +1,15 @@
 'use client';
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {randomDepartment, randomRating, mockBio, mockHistory} from '../../../lib/mockData';
 import RatingBar from '../../../components/RatingBar';
 
 export default function EmployeeDetail({ params }) {
   const [user, setUser] = useState(null);
   const [tab, setTab] = useState('overview');
-  
-  useEffect(()=> {
-    fetch(`https://dummyjson.com/users/${params.id}`)
+  const unwrappedParams = React.use(params);
+  useEffect(() => {
+    if (!unwrappedParams?.id) return;
+    fetch(`https://dummyjson.com/users/${unwrappedParams.id}`)
       .then(res => res.json())
       .then(u => {
         setUser({
@@ -17,8 +18,7 @@ export default function EmployeeDetail({ params }) {
           rating: randomRating(u.id),
         });
       });
-  }, [params.id]);
-
+  }, [unwrappedParams?.id]);
   if (!user) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
@@ -274,7 +274,7 @@ export default function EmployeeDetail({ params }) {
                             </div>
                           </div>
                           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                            "{feedback.feedback}"
+                            &quot;{feedback.feedback}&quot;
                           </p>
                         </div>
                       </div>
