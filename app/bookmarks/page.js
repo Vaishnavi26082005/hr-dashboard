@@ -1,6 +1,7 @@
-'use client';
+"use client";
 import {useBookmarks} from '../../hooks/useBookmarks';
 import Card from '../../components/Card';
+import Link from 'next/link';
 
 export default function Bookmarks() {
   const {bookmarks, remove} = useBookmarks();
@@ -39,7 +40,7 @@ export default function Bookmarks() {
             <p className="text-gray-500 dark:text-gray-500 mb-8 max-w-md mx-auto">
               Start building your team favorites by bookmarking employees from the main dashboard
             </p>
-            <a 
+            <Link 
               href="/"
               className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium py-3 px-6 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
             >
@@ -47,7 +48,7 @@ export default function Bookmarks() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
               </svg>
               Browse Employees
-            </a>
+            </Link>
           </div>
         ) : (
           <div>
@@ -105,7 +106,7 @@ export default function Bookmarks() {
                   </svg>
                   Clear All
                 </button>
-                <a 
+                <Link 
                   href="/"
                   className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg transition-all duration-200 shadow-md hover:shadow-lg text-sm font-medium"
                 >
@@ -113,7 +114,7 @@ export default function Bookmarks() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                   </svg>
                   Add More
-                </a>
+                </Link>
               </div>
             </div>
 
